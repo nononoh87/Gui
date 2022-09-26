@@ -77,7 +77,7 @@ public class InfoView {
 		pSOUTH.add(bExit);
 		f.add(pSOUTH, BorderLayout.SOUTH);
 	
-	f.setBounds(100, 100, 500, 350);	
+	f.setBounds(300, 300, 900, 400);	
 	f.setVisible(true);				
 	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	}

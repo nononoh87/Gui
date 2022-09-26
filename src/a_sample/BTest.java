@@ -24,7 +24,6 @@ public class BTest extends JFrame {	//상속관계를 받을때 부모는 무조
 
 		BTest b = new BTest();
 		b.addLayout();
-
 	}
 
 }

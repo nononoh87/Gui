@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 
 public class ATest {	//ATest와 BTest의 다른점은 방식차이
 
-	JFrame f;
+	JFrame f;		// Jframe은 java swing 클래스의 일부이며 구현되는 하나의 창이다.
 	JButton btn, bcancel;
 	JCheckBox cbJava, cbOracle;		// 다중 선택할때 사용
 	JRadioButton rbMale, rbFemale;	// 반드시 하나만 체크해야 할때

@@ -10,21 +10,21 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class InfoView {
+public class InfoView2 {
 	
 	//1.멤버 변수 선언
 	JFrame f;
-	JTextField tfName, tfId, tfTel, tfGender, tfAge, tfHome;
+	JTextField tfName, tfId, tfTel, tfSex, tfAge, tfHome;
 	JTextArea ta;
 	JButton bAdd, bShow, bSearch, bDelete, bCancle, bExit; 
 	
 	//2. 멤버변수 객체 생성
-	InfoView(){
-		f = new JFrame("DBTest");
+	InfoView2(){
+		f = new JFrame();
 		tfName = new JTextField();
 		tfId = new JTextField();
 		tfTel = new JTextField();
-		tfGender = new JTextField();
+		tfSex = new JTextField();
 		tfAge = new JTextField();
 		tfHome = new JTextField();
 		ta = new JTextArea(40, 20);
@@ -46,22 +46,36 @@ public class InfoView {
 	 */
 	
 	public void addLayout() {
+		f.setTitle("DBTest");
 		f.setLayout(new BorderLayout());
 		
 		JPanel pWEST = new JPanel();
 		pWEST.setPreferredSize(new Dimension(300, 1));
 		pWEST.setLayout(new GridLayout(6, 2));
-		pWEST.add(new JLabel("name"));
+		
+		JLabel Name = new JLabel("Name");
+		Name.setHorizontalAlignment(JLabel.CENTER);
+		pWEST.add(Name);
 		pWEST.add(tfName);
-		pWEST.add(new JLabel("ID"));
+		JLabel Id = new JLabel("Id");
+		Id.setHorizontalAlignment(JLabel.CENTER);
+		pWEST.add(Id);
 		pWEST.add(tfId);
-		pWEST.add(new JLabel("Tel"));
+		JLabel Tel = new JLabel("Tel");
+		Tel.setHorizontalAlignment(JLabel.CENTER);
+		pWEST.add(Tel);
 		pWEST.add(tfTel);
-		pWEST.add(new JLabel("Gender"));
-		pWEST.add(tfGender);
-		pWEST.add(new JLabel("age"));
+		JLabel Sex = new JLabel("Sex");
+		Sex.setHorizontalAlignment(JLabel.CENTER);
+		pWEST.add(Sex);
+		pWEST.add(tfSex);
+		JLabel Age = new JLabel("Age");
+		Age.setHorizontalAlignment(JLabel.CENTER);
+		pWEST.add(Age);
 		pWEST.add(tfAge);
-		pWEST.add(new JLabel("Home"));
+		JLabel Home = new JLabel("Home");
+		Home.setHorizontalAlignment(JLabel.CENTER);
+		pWEST.add(Home);
 		pWEST.add(tfHome);
 		f.add(pWEST, BorderLayout.WEST);
 		
@@ -85,7 +99,7 @@ public class InfoView {
 	
 	public static void main(String[] args) {
 		
-		InfoView info = new InfoView();
+		InfoView2 info = new InfoView2();
 		info.addLayout();
 	}
 

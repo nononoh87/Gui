@@ -62,7 +62,6 @@ public class CalTest {
 		f.add(tf, BorderLayout.NORTH);
 		f.add(buttonPanel, BorderLayout.CENTER);
 
-//		f.setTitle("유치원");
 		f.setVisible(true);
 		f.setSize(300, 370);	// 계산기의 크기 지정
 		f.setLocationRelativeTo(null); // 화면의 가운데에 띄움

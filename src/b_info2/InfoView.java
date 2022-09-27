@@ -1,29 +1,26 @@
-package b_info;
+package b_info2;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class InfoView {
-
-	// 1.멤버 변수 선언
+	
+	//1.멤버 변수 선언
 	JFrame f;
 	JTextField tfName, tfId, tfTel, tfGender, tfAge, tfHome;
 	JTextArea ta;
-	JButton bAdd, bShow, bSearch, bDelete, bCancle, bExit;
-
-	// 2. 멤버변수 객체 생성
-	InfoView() {
+	JButton bAdd, bShow, bSearch, bDelete, bCancle, bExit; 
+	
+	//2. 멤버변수 객체 생성
+	InfoView(){
 		f = new JFrame("DBTest");
 		tfName = new JTextField();
 		tfId = new JTextField();
@@ -35,22 +32,23 @@ public class InfoView {
 
 		bAdd = new JButton("add");
 		bShow = new JButton("Show");
-		bSearch = new JButton("Search");
+		bSearch= new JButton("Search");
 		bDelete = new JButton("Delete");
 		bCancle = new JButton("Cancle");
 		bExit = new JButton("Exit");
-
-	}
-	// 3. 화면구성하고 출력
+		
+	}	
+	//3. 화면구성하고 출력
 	/*
-	 * 전체 플레임 BorderLayout 지정 -WEST : JPanel 붙이기 (GridLayout(6, 2)) -CENTER :
-	 * 텍스트에어리어 -SOUTH : JPanell 붙이기 (GridLayout(1, 6))
+	 *  전체 플레임 BorderLayout 지정
+	 * 		-WEST	: JPanel 붙이기 (GridLayout(6, 2))
+	 * 		-CENTER : 텍스트에어리어
+	 * 		-SOUTH	: JPanell 붙이기 (GridLayout(1, 6))
 	 */
-
+	
 	public void addLayout() {
-
 		f.setLayout(new BorderLayout());
-
+		
 		JPanel pWEST = new JPanel();
 		pWEST.setPreferredSize(new Dimension(300, 1));
 		pWEST.setLayout(new GridLayout(6, 2));
@@ -67,9 +65,9 @@ public class InfoView {
 		pWEST.add(new JLabel("Home"));
 		pWEST.add(tfHome);
 		f.add(pWEST, BorderLayout.WEST);
-
+		
 		f.add(ta, BorderLayout.CENTER);
-
+		
 		JPanel pSOUTH = new JPanel();
 		pSOUTH.setPreferredSize(new Dimension(40, 50));
 		pSOUTH.setLayout(new GridLayout(1, 6));
@@ -80,39 +78,14 @@ public class InfoView {
 		pSOUTH.add(bCancle);
 		pSOUTH.add(bExit);
 		f.add(pSOUTH, BorderLayout.SOUTH);
-
-		f.setBounds(300, 300, 800, 400);
-		f.setVisible(true);
-		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	f.setBounds(300, 300, 800, 400);	
+	f.setVisible(true);				
+	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 	}
-
-	public void eventProc() {
-		// ADD 버튼이 눌렸을때
-		bAdd.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				JOptionPane.showMessageDialog(null, "ADD 이벤트발생3");
-			}
-		});
-
-		tfId.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				String jumin = tfId.getText();
-				if(jumin.length()< 14) {
-				JOptionPane.showMessageDialog(null, " - 포함한 15자를 맞춰주세요");
-				return;
-				}
-				//(1) 주민번호의 7번째 문자로 성별을 구하여 성별창에 출력
-				
-				//(2) 주민번호의 8번째 문자로 출신지를 구하여 출신창에 출력
-				
-				//(3) 주민번호에서 년도에 의해 나이를 구해서 나이창에 출력
-			}
-		});
-	}
-
-	// 이벤트 처리 함수
+	
 	public static void main(String[] args) {
-
+		
 		InfoView info = new InfoView();
 		info.addLayout();
 	}

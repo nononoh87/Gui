@@ -18,7 +18,7 @@ public class CalTest {
 	JButton[] bOp; // +, -, *, /
 	JButton bEqual;
 	
-	int first, second;
+	int first, second; // 이벤트 처리에서 계산해줄 변수를 만듬.
 	String op;
 
 	// 2. 객체 생성
@@ -37,7 +37,7 @@ public class CalTest {
 			bOp[i] = new JButton(a[i]);
 
 		}
-
+		
 	} // end of CalTest()
 
 	// 3. 화면구성및 화면 출력
@@ -79,7 +79,6 @@ public class CalTest {
 					JButton eBtn = (JButton) e.getSource();
 					String su = eBtn.getText();
 					tf.setText(tf.getText()+su);
-			
 				}
 			});
 		}
@@ -98,10 +97,10 @@ public class CalTest {
 		// = 버튼이 눌렸을때
 		bEqual.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				second = Integer.parseInt(tf.getText());
+				second = Integer.parseInt(tf.getText());	// 정수로 변환
 				int result = 0;
 				switch(op) {
-				case "+" : result = first + second; break;	//스위치 케이스문으로 첫번째와 두번째의 결과값을 연산하고 브레이크로 빠져나온다.
+				case "+" : result = first + second; break;	//스위치 케이스문으로 첫번째와 두번째의 결과값을 연산하고 result에 담고 브레이크를 만나면빠져나와라.
 				case "-" : result = first - second; break;
 				case "*" : result = first * second; break;
 				case "/" : result = first / second; break;

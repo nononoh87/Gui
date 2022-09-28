@@ -1,4 +1,4 @@
-package b_info;
+package b_info3;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -18,7 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-public class InfoView2 {
+public class InfoView {
 
 	// 1.멤버 변수 선언
 	JFrame f;
@@ -27,7 +27,7 @@ public class InfoView2 {
 	JButton bAdd, bShow, bSearch, bDelete, bCancle, bExit;
 
 	// 2. 멤버변수 객체 생성
-	InfoView2() {
+	InfoView() {
 
 		f = new JFrame();
 
@@ -134,17 +134,49 @@ public class InfoView2 {
 			}
 			@Override
 			public void focusGained(FocusEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 			@Override
 			public void focusLost(FocusEvent e) {
-				// TODO Auto-generated method stub
-				
 			}
 		});	//end of addFocusListener
-	}	//end of eventProc()
+		//end of eventProc()
 		
+		bCancle.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				clearTextField();
+		}	//end of ActionEvent
+	});	//end of addActionListener
+		
+		// ADD 버튼이 눌렸을때
+		bAdd.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}	
+		});	
+}	//end of eventProc()
+	/*
+	 * "Add"눌려졌을때 텍스트 필드에사용자가 입력한 값들을 PersonVO에 저장
+	 */
+	void inputData() {
+		//(1) 각각의 텍스트필드의 입력값을 얻어오기
+		String name = tfName.getText();
+		String Id = tfId.getText();
+		String Tel =tfTel.getText();
+		String Gender =tfGender.getText();
+		String Age =tfAge.getText();
+		String Home =tfHome.getText();
+		//(2) 1번의 값들을 PersonVO 멤버변수에 저장 (sETTER /CONSTRUCTOR))
+		PersonVO vo = new PersonVO();
+		vo.setName(tfName.getText());
+	} //void inputData()
+		/*
+		 * 각각의 텍스트필드와 텍스트에어리어의 값을 지우기
+		 */
+	void clearTextField(){
+		ta.setText(null);
+		//나머지 텍스트 필드도 지우기
+	
+	}	//clearTextField();
 	void getJuminInfo() {
 		String jumin = tfId.getText();
 		if (jumin.length() < 14) {
@@ -198,7 +230,7 @@ public class InfoView2 {
 	
 	public static void main(String[] args) {
 
-		InfoView2 info = new InfoView2();
+		InfoView info = new InfoView();
 		info.addLayout();
 		info.eventProc();
 	}
